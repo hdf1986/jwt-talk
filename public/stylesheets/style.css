@@ -26,6 +26,20 @@ body {
   flex-direction: column;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.avatar {
+  display: block;
+  width: 160px;
+  height: 160px;
+  border-radius: 100px;
+  background-position: center center;
+  background-size: cover;
+  background-image: url(/images/avatar.jpg);
+}
+
 .bold {
   font-weight: bold;
 }

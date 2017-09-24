@@ -1,5 +1,7 @@
 (function(){
-  let currentSlideNumber = 0;
+  const getPathUrl = () => document.location.hash.substr(1);
+  const setPathUrl = (hash) => document.location.hash = hash;
+  let currentSlideNumber = getPathUrl() || 0;
 
   const getSlides = () => document.querySelectorAll(`.slide`)
   const getSlide = (slide) => document.querySelector(`.slide[data-pos=${slide}]`)
@@ -12,6 +14,7 @@
   const prevSlide = () => { minSlide > currentSlideNumber - 1 || currentSlideNumber -- ; updateSlide() }
 
   const updateSlide = () => {
+    setPathUrl(currentSlideNumber);
     getSlides().forEach((slide) => {
       slide.style.left = `${(slide.dataset.pos - currentSlideNumber) * slide.offsetWidth}px`
     })
