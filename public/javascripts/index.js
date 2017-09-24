@@ -20,7 +20,12 @@
       slide.style.left = `${(slide.dataset.pos - currentSlideNumber) * slideWidth}px`
     })
     getCurrentSlide().querySelectorAll('[data-animate]').forEach((ele) => {
-      ele.classList.add(ele.dataset.animate, 'animated')
+      if(typeof ele.dataset.delay === 'undefined') {
+        ele.classList.add(ele.dataset.animate, 'animated')
+      } else {
+        ele.style.animationDelay = `${ele.dataset.delay}ms`
+        ele.classList.add(ele.dataset.animate, 'animated')
+      }
     })
   }
 

@@ -2,26 +2,196 @@ extends layout
 
 block content
   .slides
-    .slide.center-both.main(data-pos = 0 style="left:0px")
-      .first-row.center-both.flex-direction-row(data-animate='fadeInDown')
+    .slide.center-both.main(data-pos = 0)
+      .first-row.center-both.flex-direction-row(data-animate = 'fadeInDown')
         img(src="/images/pic_logo.svg")
         img(src="/images/logo.svg")
-      h1.second-row.font-size-40.bold.letter-spacing(data-animate='fadeInUp')
+      h1.second-row.font-size-40.bold.letter-spacing(data-animate = 'fadeInUp')
         | [ Seguridad e identidad ]
       
-    .slide.center-both(data-pos = 1 style="left:100vw")
+    .slide.center-both(data-pos = 1)
       .avatar(data-animate='flipInY')
-      h1.font-size-40.bold.letter-spacing(data-animate='fadeInLeft')
+      h1.font-size-40.bold.letter-spacing(data-animate = 'fadeInLeft')
         | Hugo Farji
-      h2.bold.text-center(data-animate='fadeInLeft')
+      h2.bold.text-center(data-animate = 'fadeInLeft')
         | Desarrolador web
         br
         | Github / Twitter: @hdf1986
-    .slide.center-both(data-pos = 2 style="left:200vw")
-      .avatar
-      h1.font-size-40.bold.letter-spacing
-        | Hugo Farji
-      h2.bold.text-center
-        | Desarrolador web
-        br
-        | Github / Twitter: @hdf1986
+    .slide.center-both(data-pos = 2)
+      h1.font-size-40.bold
+        | Hablemos sobre identidad
+      p.font-size-30.bold(data-animate = 'fadeInLeft' data-delay = 6000)
+        | La identidad te representa y te distingue del resto de los usuarios
+    .slide.center-both(data-pos = 3)
+      h1
+        | Atributos que permiten identificarte en un sitio web:
+      br
+      ul.font-size-30
+        li(data-animate = 'bounceIn' data-delay = 000)
+          | Email
+        li(data-animate = 'bounceIn' data-delay = 200)
+          | ID de tu usuario
+        li(data-animate = 'bounceIn' data-delay = 400)
+          | Nombre Y Apellido
+        li(data-animate = 'bounceIn' data-delay = 600)
+          | DNI
+    .slide.center-both(data-pos = 4)
+      h1 
+        | ¿Y que pasa cuando alguien roba mi identidad?
+    .slide.center-both(data-pos = 5)
+      h1
+        | Se puede:
+      br
+      ul.font-size-30
+        li(data-animate = 'bounceIn' data-delay = 000)
+          | Comprar
+        li(data-animate = 'bounceIn' data-delay = 200)
+          | Publicar
+        li(data-animate = 'bounceIn' data-delay = 400)
+          | Eliminar
+        li(data-animate = 'bounceIn' data-delay = 600)
+          | Editar
+      br
+      h2(data-animate = 'bounceIn' data-delay = 2600)
+        | Y TODO EN TU NOMBRE!
+    .slide.center-both(data-pos = 6)
+      h1.font-size-40.bold
+        | ¿Podemos confiar en lo que dice el usuario?
+      h2.font-size-40.bold(data-animate = 'fadeInUp' data-delay = 3000)
+        | NO
+    .slide.center-both(data-pos = 7)
+      h2.font-size-30
+        | Por esto es que existen muchas estrategias de autenticación.
+      br
+      ul.font-size-30
+        li(data-animate = 'bounceIn' data-delay = 1800)
+          | Combinación email/contraseña
+        li(data-animate = 'bounceIn' data-delay = 2100)
+          | 2 Factor Autentication (2FA)
+        li(data-animate = 'bounceIn' data-delay = 2300)
+          | OAuth
+        li(data-animate = 'bounceIn' data-delay = 2600)
+          | JWT
+    .slide.center-both(data-pos = 8)
+      h1.font-size-40
+        | ¿Jota doble ve que?
+      br
+      h2.font-size-30(data-animate = 'fadeInUp' data-delay = 2500)
+        | Json Web Tokens
+      br
+      h2.font-size-30(data-animate = 'fadeInUp' data-delay = 3000)
+        | Es un metodo estandarizado, abierto y 
+        strong.underscore
+          | seguro
+        |  para comunicar dos partes
+      br
+      h2.font-size-30(data-animate = 'fadeInUp' data-delay = 6000)
+        | ¡Ah! Y fue desarrollado por nuestros amigos de Auth0
+      br
+      .auth0.white-background.center-both(data-animate = 'fadeInUp' data-delay = 6000)
+        img(src = '/images/auth0.png' height = 80)
+    .slide.center-both(data-pos = 9)
+      h1
+        | ¿Como funciona JWT?
+    .slide.center-both(data-pos = 10)
+      h1 
+        | Imaginen un mensaje JSON como este: 
+      br
+      pre.font-size-40
+        |{
+        |     "userId": "3",
+        |     "email": "morty@freecodecampba.org"
+        |     "admin": false
+        |}
+    .slide.center-both(data-pos = 11)
+      h1.font-size-40
+        | Traducido a JWT quedaria asi:
+      br
+      pre.font-size-40(style = 'background: lightgrey')
+        span(style = 'color: red')
+          | eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
+        span(style = 'color: green')
+          | eyJ1c2Vy
+          br
+          | SWQiOiIzIiwiZW1haWwiOiJtb3J0eUBmcmVlY29kZ
+          br
+          |WNhbXBiYS5vcmciLCJhZG1pbiI6ZmFsc2V9.
+        span(style = 'color: blue')
+          | TJVA95
+          br
+          | OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
+      br
+      h2.font-size-40(data-animate = 'fadeInUp' data-delay = 4000)
+        | Jajaja si, posta, asi queda ¯\_(ツ)_/¯
+    .slide.center-both(data-pos = 12)
+      h1.font-size-30
+        | La primer parte representa la cabecera
+      h1.font-size-30
+        | Esta incluye los algoritmos usados para firmar el token:
+      br
+      pre.font-size-30(style = 'background: lightgrey')
+        span(style = 'color: red')
+          | eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
+          br
+          br
+          | // Se traduce a
+          | {
+          |   "alg": "HS256",
+          |   "typ": "JWT"
+          | }
+    .slide.center-both(data-pos = 13)
+      h1.font-size-30
+        | La segunda parte representa nuestro mensaje original
+      h1.font-size-30
+        | Esta incluye los algoritmos usados para firmar el token:
+      br
+      pre.font-size-30(style = 'background: lightgrey')
+        span(style = 'color: green')
+          | eyJ1c2VySWQiOiIzIiwiZW1haWwiOiJtb3J0eUBmcmVlY29kZWNhbXBiYS5vcmciLCJhZG1pbiI6ZmFsc2V9.
+          br
+          br
+          |{
+          |     "userId": "3",
+          |     "email": "morty@freecodecampba.org",
+          |     "admin": false
+          |}
+    .slide.center-both(data-pos = 14)
+      h1.font-size-40
+        | La tercer parte es la validación ¡Es magica!
+        
+      h1.font-size-30(data-animate = 'fadeInLeft' data-delay = 3000)
+        | Esta firma involucra los valores anteriores
+      h1.font-size-30(data-animate = 'fadeInLeft' data-delay = 3000)
+        | Si la firma o algun valor anterior es manipulado, al recalcular la firma el algoritmo fallara
+      br
+      pre.font-size-30(style = 'background: lightgrey')
+        span(style = 'color: blue')
+          | HXa_oYFesHz2atX_l3n1K7XFtWEhHEOifIzYgGqn_Z0
+          | HMACSHA256(
+          |  base64UrlEncode(header) + "." +
+          |  base64UrlEncode(payload),
+          |  secret
+          | )
+    .slide.center-both(data-pos = 15)
+      h1.font-size-30
+        | En resumen, podemos confiar en nuestros usuarios solo si les es imposible mentir
+      h1.font-size-30
+        | Si un usuario alterara el mensaje, nos dariamos cuenta. 
+      h1.font-size-30
+        | Por lo tanto podemos usar este mensaje inalterado para autenticar al usuario :D
+    .slide.center-both(data-pos = 16)
+      h1.font-size-40(data-animate = 'fadeInDown')
+        | Cool, ¿Y como lo uso?
+      br
+      pre.font-size-30(style = 'background: white; padding: 15px' data-animate = 'fadeInUp' data-delay = 1000)
+        p!= code
+    .slide.center-both(data-pos = 17)
+      h1
+        span.font-size-40(data-animate = 'fadeInLeft' data-delay = 600)
+          | ¡Eso es todo! 
+        span.font-size-40(data-animate = 'fadeInLeft' data-delay = 1600)
+          | Ahora, ¡Manos a la obra!
+      h1
+        span.font-size-40(data-animate = 'fadeInLeft' data-delay = 3000)
+          | ¡Muchas gracias!
+          
