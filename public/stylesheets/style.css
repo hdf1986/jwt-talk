@@ -2,6 +2,7 @@
 
 body {
   background: #738091;
+  height: 100vh;
 }
 
 * {
@@ -13,6 +14,7 @@ body {
 }
 
 .slides {
+  display: block;
   position: relative;
   overflow: hidden;
   width: 100vw;
@@ -52,13 +54,20 @@ body {
   flex-direction: row;
 }
 
+.hidden {
+  display: none;
+}
+
 .slide {
   position: absolute;
   top: 0;
-  left: 0;
   height: 100vh;
   width: 100vw;
-  float: left;
+}
+
+.full-size {
+  height: 100vh;
+  width: 100vw;
 }
 
 .main img {
